@@ -5,6 +5,11 @@ CnOCR 直接内置模型，无需下载，直接使用。方便 AI模块直接�
 
 
 
-```
+```  x86
 docker run -d -p 8501:8501 --name ocr registry.cn-hangzhou.aliyuncs.com/pigx/ocr:latest
 ```
+
+
+自行编译  如需修改平台 --platform=linux/arm64 python:3.9
+cd docker-ocr-image
+docker build -t cnocr  .
