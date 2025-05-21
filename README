@@ -10,6 +10,12 @@ docker run -d -p 8501:8501 --name ocr registry.cn-hangzhou.aliyuncs.com/pigx/ocr
 ```
 
 
-自行编译  如需修改平台 --platform=linux/arm64 python:3.9
+自行编译镜像  如需修改平台 --platform=linux/arm64 python:3.9
 cd docker-ocr-image
-docker build -t cnocr  .
+docker build -t cnocr .
+
+
+docker run -d -p 8501:8501 --name cnocr cnocr:latest
+
+ 测试
+curl -F image=@localpath/btn.png http://127.0.0.1:8501/ocr
